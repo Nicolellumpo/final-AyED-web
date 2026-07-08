@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>// Final Algoritmos y Estructura de Datos</title>
+<link rel="stylesheet" href="estilosEstudioFinalAlgoritmos.css">
+</head>
+<body>
+
+<!-- ============ ENCABEZADO ============ -->
+<header class="encabezadoPrincipal">
+  <div class="contenedorEncabezado">
+    <p class="etiquetaTerminal">$ ./preparar_final --materia=AyED</p>
+    <h1 class="tituloPrincipal">Algoritmos y Estructura de Datos</h1>
+    <p class="subtituloPrincipal">Guía interactiva para el final — UTN FRBA · 1er año</p>
+    <div class="bloqueCuentaRegresiva">
+      <span class="etiquetaCuentaRegresiva">Faltan para el final (24/07)</span>
+      <div class="numeroCuentaRegresiva" id="numeroCuentaRegresiva">--</div>
+      <span class="etiquetaCuentaRegresiva" id="etiquetaDiasHoras">días</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ NAVEGACION POR PESTAÑAS ============ -->
+<nav class="navegacionPestanas">
+  <button class="botonPestana botonPestanaActivo" data-pestana="pestanaTeoria">01 · Teoría</button>
+  <button class="botonPestana" data-pestana="pestanaFlashcards">02 · Flashcards</button>
+  <button class="botonPestana" data-pestana="pestanaQuiz">03 · Quiz V/F</button>
+  <button class="botonPestana" data-pestana="pestanaTrace">04 · Trace de código</button>
+  <button class="botonPestana" data-pestana="pestanaCatedra">05 · Ejercicio de cátedra</button>
+</nav>
+
+<main class="contenedorPrincipal">
+
+  <!-- ============ PESTAÑA: TEORIA ============ -->
+  <section class="pestanaContenido pestanaContenidoActiva" id="pestanaTeoria">
+    <p class="descripcionPestana">Resumen plegable de cada tema. Tocá cada bloque para expandirlo — pensado para repasar rápido el día anterior.</p>
+    <div class="listaAcordeon" id="listaAcordeonTeoria"></div>
+  </section>
+
+  <!-- ============ PESTAÑA: FLASHCARDS ============ -->
+  <section class="pestanaContenido" id="pestanaFlashcards">
+    <p class="descripcionPestana">Tocá la tarjeta para dar vuelta. Usá los botones para marcar si la sabías o no — así priorizás lo que más te cuesta.</p>
+    <div class="contadorFlashcards">
+      <span id="posicionFlashcardActual">1</span> / <span id="totalFlashcards">0</span>
+      &nbsp;·&nbsp; <span class="etiquetaSabidas">Sabidas: <span id="contadorSabidas">0</span></span>
+      &nbsp;·&nbsp; <span class="etiquetaRepasar">A repasar: <span id="contadorRepasar">0</span></span>
+    </div>
+    <div class="escenarioFlashcard">
+      <div class="tarjetaFlashcard" id="tarjetaFlashcard">
+        <div class="caraFlashcard caraFrenteFlashcard" id="caraFrenteFlashcard"></div>
+        <div class="caraFlashcard caraDorsoFlashcard" id="caraDorsoFlashcard"></div>
+      </div>
+    </div>
+    <div class="controlesFlashcard">
+      <button class="botonControlFlashcard" id="botonFlashcardAnterior">&larr; Anterior</button>
+      <button class="botonControlFlashcard botonNoSabia" id="botonFlashcardNoSabia">No la sabía</button>
+      <button class="botonControlFlashcard botonSiSabia" id="botonFlashcardSiSabia">La sabía ✓</button>
+      <button class="botonControlFlashcard" id="botonFlashcardSiguiente">Siguiente &rarr;</button>
+    </div>
+    <button class="botonReiniciarFlashcards" id="botonReiniciarFlashcards">Reiniciar mazo</button>
+  </section>
+
+  <!-- ============ PESTAÑA: QUIZ V/F ============ -->
+  <section class="pestanaContenido" id="pestanaQuiz">
+    <p class="descripcionPestana">Preguntas estilo "V o F, justifique" como las del final. Elegí y mirá la justificación.</p>
+    <div class="contadorFlashcards">
+      Pregunta <span id="posicionQuizActual">1</span> / <span id="totalQuiz">0</span>
+      &nbsp;·&nbsp; Puntaje: <span id="puntajeQuiz">0</span>
+    </div>
+    <div class="tarjetaQuiz" id="tarjetaQuiz">
+      <p class="enunciadoQuiz" id="enunciadoQuiz"></p>
+      <div class="botonesRespuestaQuiz">
+        <button class="botonRespuestaQuiz" id="botonRespuestaVerdadero" data-respuesta="true">VERDADERO</button>
+        <button class="botonRespuestaQuiz" id="botonRespuestaFalso" data-respuesta="false">FALSO</button>
+      </div>
+      <div class="resultadoQuiz" id="resultadoQuiz"></div>
+    </div>
+    <div class="controlesFlashcard">
+      <button class="botonControlFlashcard" id="botonQuizSiguiente">Siguiente pregunta &rarr;</button>
+      <button class="botonReiniciarFlashcards" id="botonReiniciarQuiz">Reiniciar quiz</button>
+    </div>
+  </section>
+
+  <!-- ============ PESTAÑA: TRACE DE CODIGO ============ -->
+  <section class="pestanaContenido" id="pestanaTrace">
+    <p class="descripcionPestana">Estos ejercicios son los que más se pierden por apuro. Leé el código, escribí qué imprime, y recién ahí mirá la solución.</p>
+    <div class="listaEjerciciosTrace" id="listaEjerciciosTrace"></div>
+  </section>
+
+  <!-- ============ PESTAÑA: EJERCICIO DE CATEDRA ============ -->
+  <section class="pestanaContenido" id="pestanaCatedra">
+    <p class="descripcionPestana">El "problema grande" del final siempre sigue el mismo patrón. Practicá reconociendo las partes antes de mirar la resolución completa.</p>
+    <div class="listaEjerciciosCatedra" id="listaEjerciciosCatedra"></div>
+  </section>
+
+</main>
+
+<footer class="piePagina">
+  <p>Hecha a partir de los finales 2024 (CONAIISI, cuentas bancarias, trace con punteros) y del temario de la cátedra. Éxitos el 24/07, Nicole.</p>
+</footer>
+
+<script src="logicaEstudioFinalAlgoritmos.js"></script>
+</body>
+</html>
