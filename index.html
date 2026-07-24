@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="estilosEstudioFinalAlgoritmos.css">
 </head>
 <body>
+
 <!-- ============ ENCABEZADO ============ -->
 <header class="encabezadoPrincipal">
   <div class="contenedorEncabezado">
@@ -28,6 +29,7 @@
   <button class="botonPestana" data-pestana="pestanaQuiz">03 · Quiz V/F</button>
   <button class="botonPestana" data-pestana="pestanaTrace">04 · Trace de código</button>
   <button class="botonPestana" data-pestana="pestanaCatedra">05 · Ejercicio de cátedra</button>
+  <button class="botonPestana" data-pestana="pestanaRepo">06 · Ejercicios del repo</button>
 </nav>
 
 <main class="contenedorPrincipal">
@@ -94,10 +96,16 @@
     <div class="listaEjerciciosCatedra" id="listaEjerciciosCatedra"></div>
   </section>
 
+  <!-- ============ PESTAÑA: EJERCICIOS DEL REPO ============ -->
+  <section class="pestanaContenido" id="pestanaRepo">
+    <p class="descripcionPestana">Basado en tu repo <span class="textoCodigoInline">Final-AyED-Ejercicios</span>. Cada tarjeta toma código real que ya escribiste y te pregunta algo puntual — trace, encontrar un error, o extender el código. Pensalo antes de mirar la solución.</p>
+    <div class="listaEjerciciosRepo" id="listaEjerciciosRepo"></div>
+  </section>
+
 </main>
 
 <footer class="piePagina">
-  <p>Hecha a partir de los finales 2024 (CONAIISI, cuentas bancarias, trace con punteros) y del temario de la cátedra. Éxitos el 24/07, Nicole.</p>
+  <p>Hecha a partir de los finales 2024 (CONAIISI, cuentas bancarias, trace con punteros), del temario de la cátedra y de tu repo <a href="https://github.com/Nicolellumpo/Final-AyED-Ejercicios" style="color:var(--verdeFosforo);">Final-AyED-Ejercicios</a>. Éxitos el 24/07, Nicole.</p>
 </footer>
 
 <script src="logicaEstudioFinalAlgoritmos.js"></script>
